@@ -8,14 +8,11 @@ class Player {
 public class RockPaperScissor {
 
     public static void rockPaperScissors(String ch1, String ch2) {
-        String res = "";
+        String res = "-";
         boolean isInvalid1 = false;
         boolean isInvalid2 = false;
-        System.out.println(isInvalid1);
-        System.out.println(isInvalid2);
-        
-        
-        if(ch1!="" && ch2!="") {
+
+        if (ch1 != "" && ch2 != "") {
 
             switch (ch1) {
                 case "rock":
@@ -32,6 +29,7 @@ public class RockPaperScissor {
                         default:
                             isInvalid2 = true;
                             break;
+
                     }
                     break;
 
@@ -49,6 +47,7 @@ public class RockPaperScissor {
                         default:
                             isInvalid2 = true;
                             break;
+
                     }
                     break;
 
@@ -66,23 +65,28 @@ public class RockPaperScissor {
                         default:
                             isInvalid2 = true;
                             break;
+
                     }
                     break;
                 default:
+                    System.out.println(ch2);
                     isInvalid1 = true;
                     break;
+
             }
+
         }
-        // if(Boolean.compare(isInvalid1,isInvalid2)){
-        //     System.out.println("Invalid Move "+ch1+" and "+ch2+"!");
-        // }
-        
-        
-        if(res=="Player 1" || res=="Player 2"){
-            System.out.println("\n-----\n"+res+" wins!\n-----\n");
+
+        if (isInvalid1) {
+            res = "\nInvalid Move for " + ch1 + "!\n";
         }
-        else{
-            System.out.println(res);
+        if (isInvalid2) {
+            res = "\nInvalid Move for " + ch2 + "!\n";
+        }
+        if (res == "Player 1" || res == "Player 2") {
+            System.out.println("\n-----\n" + res + " wins!\n-----\n");
+        } else {
+            System.out.println("\n" + res + "\n");
         }
     }
 
@@ -94,17 +98,22 @@ public class RockPaperScissor {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String ch1, ch2;
         System.out.println("\n----------Welcome to RockPaperScissors Game----------\n");
         System.out.println("\nChoose : Rock / Paper / Scissors \n");
         Player p1 = new Player();
         System.out.print("Player 1 : ");
-        p1.choice = sc.next().toLowerCase();
-        clear();
+        ch1 = sc.next().toLowerCase();
+        p1.choice = ch1;
+        // clear();
+        System.out.println("\nChoose : Rock / Paper / Scissors \n");
         Player p2 = new Player();
         System.out.print("Player 2 : ");
-        p2.choice = sc.next().toLowerCase();
-        clear();
+        ch2 = sc.next().toLowerCase();
+        p2.choice = ch2;
+        // clear();
         rockPaperScissors(p1.choice, p2.choice);
+        // checkError(p1.choice,p2.choice);
         sc.close();
     }
 }
