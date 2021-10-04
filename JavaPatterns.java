@@ -27,7 +27,13 @@ public class JavaPatterns{
         }
     }
     public static void oval() {
-        System.out.println();
+        System.out.println("    ***    ");
+        System.out.println("   *   *   ");
+        System.out.println("  *     *  ");
+        System.out.println("  *     *  ");
+        System.out.println("  *     *  ");
+        System.out.println("   *   *   ");
+        System.out.println("    ***    ");
         
     }
     public static void arrow(int n) {
@@ -83,7 +89,7 @@ public class JavaPatterns{
                 box(6);
                 break;
             case 2:
-                // oval();
+                oval();
                 break;
             case 3:
                 arrow(6);
